@@ -189,12 +189,14 @@ for col in cols: mpoints.extend(col)
 
 for point in mpoints:
     msq, mlsp = point[0], point[1]
+    mnlsp = mlsp + 20
     qcut, tru_eff = matchParams(msq)
     wgt = point[2]*(mcm_eff/tru_eff)
     
     if mlsp==0: mlsp = 1
     slhatable = baseSLHATable.replace('%MSQ%','%e' % msq)
     slhatable = slhatable.replace('%MLSP%','%e' % mlsp)
+    slhatable = slhatable.replace('%MNLSP%','%e' % mnlsp)
 
     basePythiaParameters = cms.PSet(
         pythia8CommonSettingsBlock,
