@@ -41,35 +41,35 @@ BLOCK MASS  # Mass Spectrum
 #         PDG            Width
 DECAY   1000001     0.10000000E+00   # sdown_L decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -1                   # BR(~d_L -> chi_1+ -d)
+1.00000E+00       2     -1000024  2                    # BR(~d_L -> chi_1- u)
 
 DECAY   2000001     0.10000000E+00   # sdown_R decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -1                   # BR(~d_R -> chi_1+ -d)
+1.00000E+00       2     -1000024   2                   # BR(~d_R -> chi_1- u)
 
 DECAY   1000002     0.10000000E+00   # sup_L decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -2                   # BR(~u_L -> chi_1+ -u)
+1.00000E+00       2     1000024   1                    # BR(~u_L -> chi_1+ d)
 
 DECAY   2000002     0.10000000E+00   # sup_R decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -2                   # BR(~u_R -> chi_1+ -u)
+1.00000E+00       2     1000024   1                    # BR(~u_R -> chi_1+ d)
 
 DECAY   1000003     0.10000000E+00   # sstrange_L decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -3                   # BR(~s_L -> chi_1+ -s)
+1.00000E+00       2     -1000024  3                    # BR(~s_L -> chi_1- c)
 
 DECAY   2000003     0.10000000E+00   # sstrange_R decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -3                   # BR(~s_R -> chi_1+ -s)
+1.00000E+00       2     -1000024  3                    # BR(~s_R -> chi_1- c)
 
 DECAY   1000004     0.10000000E+00   # scharm_L decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -4                   # BR(~c_L -> chi_1+ -c)
+1.00000E+00       2     1000024   -4                   # BR(~c_L -> chi_1+ s)
 
 DECAY   2000004     0.10000000E+00   # scharm_R decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -4                   # BR(~c_R -> chi_1+ -c)
+1.00000E+00       2     1000024   -4                   # BR(~c_R -> chi_1+ s)
 
 DECAY   1000005     0.00000000E+00   # sbottom1 decays
 DECAY   2000005     0.00000000E+00   # sbottom2 decays
@@ -223,6 +223,13 @@ for point in mpoints:
             'JetMatching:doShowerKt = off', #off for MLM matching, turn on for shower-kT matching
             '6:m0 = 172.5',
             'Check:abortIfVeto = on',
+            'ResonanceDecayFilter:filter = on', 
+            'ResonanceDecayFilter:exclusive = off', #off: require at least the specified number of daughters, on: require exactly the specified number of daughters
+            'ResonanceDecayFilter:eMuAsEquivalent = off', #on: treat electrons and muons as equivalent
+            'ResonanceDecayFilter:eMuTauAsEquivalent = on', #on: treat electrons, muons , and taus as equivalent
+            'ResonanceDecayFilter:allNuAsEquivalent = on', #on: treat all three neutrino flavours as equivalent
+            #'ResonanceDecayFilter:mothers =', #list of mothers not specified -> count all particles in hard process+resonance decays (better to avoid specifying mothers when including leptons from the lhe in counting, since intermediate resonances are not gauranteed to appear in general
+            'ResonanceDecayFilter:daughters = 11',
         ), 
         parameterSets = cms.vstring('pythia8CommonSettings',
                                     'pythia8CUEP8M1Settings',
