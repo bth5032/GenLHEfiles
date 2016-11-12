@@ -40,29 +40,37 @@ BLOCK MASS  # Mass Spectrum
 # DECAY TABLE
 #         PDG            Width
 DECAY   1000001     0.10000000E+00   # sdown_L decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         1
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -1                   # BR(~d_L -> chi_1+ -d)
+
 DECAY   2000001     0.10000000E+00   # sdown_R decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         1
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -1                   # BR(~d_R -> chi_1+ -d)
+
 DECAY   1000002     0.10000000E+00   # sup_L decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         2
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -2                   # BR(~u_L -> chi_1+ -u)
+
 DECAY   2000002     0.10000000E+00   # sup_R decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         2
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -2                   # BR(~u_R -> chi_1+ -u)
+
 DECAY   1000003     0.10000000E+00   # sstrange_L decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         3
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -3                   # BR(~s_L -> chi_1+ -s)
+
 DECAY   2000003     0.10000000E+00   # sstrange_R decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         3
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -3                   # BR(~s_R -> chi_1+ -s)
+
 DECAY   1000004     0.10000000E+00   # scharm_L decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         4
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -4                   # BR(~c_L -> chi_1+ -c)
+
 DECAY   2000004     0.10000000E+00   # scharm_R decays
-#          BR         NDA      ID1       ID2
-1.00000E+00    2     1000022         4
+#BR               NDA   ID1       ID2        ID3
+1.00000E+00       2     1000024   -4                   # BR(~c_R -> chi_1+ -c)
+
 DECAY   1000005     0.00000000E+00   # sbottom1 decays
 DECAY   2000005     0.00000000E+00   # sbottom2 decays
 DECAY   1000006     0.00000000E+00   # stop1 decays
@@ -82,9 +90,9 @@ DECAY   1000022     0.00000000E+00   # neutralino1 decays
 DECAY   1000023     0.00000000E+00   # neutralino2 decays
 
 DECAY   1000024     1.00000000E+00   # chargino1+ decays
-#                 BR    NDA            ID1    ID2 
-0.00000000E+00    3     1000022        -1      2     # Dummy decay to allow off-shell W
-1.00000000E+00    2     1000022        24            # BR(CH1 -> N1 + W)
+#BR               NDA   ID1       ID2        ID3
+0.00000000E+00    3     1000022   -1         2         # Dummy decay to allow off-shell W
+1.00000000E+00    2     1000022   24                   # BR(CH1 -> N1 + W)
 
 DECAY   1000025     0.00000000E+00   # neutralino3 decays
 DECAY   1000035     0.00000000E+00   # neutralino4 decays
