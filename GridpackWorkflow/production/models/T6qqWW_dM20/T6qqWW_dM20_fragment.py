@@ -65,11 +65,11 @@ DECAY   2000003     0.10000000E+00   # sstrange_R decays
 
 DECAY   1000004     0.10000000E+00   # scharm_L decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -4                   # BR(~c_L -> chi_1+ s)
+1.00000E+00       2     1000024   4                   # BR(~c_L -> chi_1+ s)
 
 DECAY   2000004     0.10000000E+00   # scharm_R decays
 #BR               NDA   ID1       ID2        ID3
-1.00000E+00       2     1000024   -4                   # BR(~c_R -> chi_1+ s)
+1.00000E+00       2     1000024   4                   # BR(~c_R -> chi_1+ s)
 
 DECAY   1000005     0.00000000E+00   # sbottom1 decays
 DECAY   2000005     0.00000000E+00   # sbottom2 decays
