@@ -20,7 +20,8 @@ class model:
 
 
 models = {}
-models["T6qqWW_dM20"] = model(nbinsx=37,xmin=300,xmax=1800,nbinsy=57,ymin=0,ymax=1400,nconfigs=503)
+#models["T6qqWW_dM20"] = model(nbinsx=37,xmin=300,xmax=1800,nbinsy=57,ymin=0,ymax=1400,nconfigs=503)
+models['T6qqWW_dM20'] = model(30,300,1800,70,0,1400,500)
 models["T5qqqqVV"] = model(34, 600, 2300, 32, 0, 1600, 500)
 models["T5qqqqVV_dM20"] = model(24, 600, 1800, 26, 0, 1300, 500)
 models["T5qqqqVV_dM15_mLSP-300"] = model(30, 600, 2100, 1, 300, 350, 30)
